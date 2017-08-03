@@ -13,7 +13,7 @@ class IndexController extends \Src\Http\Controller {
      */
     
     public function view() {
-        echo $this->service->render('adm/login.twig', [
+        echo $this->app->render('adm/login.twig', [
             'simple' => [
                 'title'    => 'Estácio :: Login',
                 'data'     => date('Y'),

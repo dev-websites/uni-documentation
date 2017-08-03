@@ -13,7 +13,7 @@ class SolicitacaoController extends AuthController {
     public function view() {
         AuthController::auth();
         
-        echo $this->service->render('site/solicitacao.twig', [
+        echo $this->app->render('site/solicitacao.twig', [
             'simple' => [
                 'title'             => 'Estácio :: Solicitações',
                 'data'              => date('Y'),

@@ -9,32 +9,32 @@
      */
 
      
-     $simple->get('/', 'IndexController@view');
+     $simple->get('/', 'Index@view');
      
-     $simple->get('/notificacoes', 'NotificacaoController@view');
-     $simple->get('/home', 'HomeController@view');
+     $simple->get('/notificacoes', 'Notificacao@view');
+     $simple->get('/home', 'Home@view');
     
-     $simple->get('/cadastro/aluno', 'CadastroController@view_aluno');
-     $simple->get('/cadastro/arquivo', 'CadastroController@view_arquivo');
-     $simple->get('/deletar/aluno', 'cadastroController@view_deletar');
-     $simple->get('/cadastro/solicitacao', 'CadastroController@view_solicitacao');
-     $simple->get('/cadastro/admin', 'CadastroController@view_admin');
+     $simple->get('/cadastro/aluno', 'Cadastro@view_aluno');
+     $simple->get('/cadastro/arquivo', 'Cadastro@view_arquivo');
+     $simple->get('/deletar/aluno', 'cadastro@view_deletar');
+     $simple->get('/cadastro/solicitacao', 'Cadastro@view_solicitacao');
+     $simple->get('/cadastro/admin', 'Cadastro@view_admin');
      
-     $simple->get('/solicitacao', 'SolicitacaoController@view');
-     $simple->get('/lista/[:str]?/[:filtro]?', 'ListaController@view');
+     $simple->get('/solicitacao', 'Solicitacao@view');
+     $simple->get('/lista/[:str]?/[:filtro]?', 'Lista@view');
      
-     $simple->get('/logout', 'AuthController@logout');
+     $simple->get('/logout', 'Auth@logout');
      
-     $simple->post('/cadastro/admin', 'CadastroController@salvar_admin');
-     $simple->post('/home', 'HomeController@enviar');
-     $simple->post('/', 'AuthController@login');
-     $simple->post('/cadastro/aluno', 'CadastroController@salvar_aluno');
-     $simple->post('/cadastro/arquivo', 'CadastroController@salvar_arquivo');
-     $simple->post('/deletar/aluno', 'CadastroController@deletar_arquivo');
-     $simple->post('/cadastro/solicitacao', 'CadastroController@salvar_solicitacao');
-     $simple->post('/notificacoes', 'NotificacaoController@leitura');
+     $simple->post('/cadastro/admin', 'Cadastro@salvar_admin');
+     $simple->post('/home', 'Home@enviar');
+     $simple->post('/', 'Auth@login');
+     $simple->post('/cadastro/aluno', 'Cadastro@salvar_aluno');
+     $simple->post('/cadastro/arquivo', 'Cadastro@salvar_arquivo');
+     $simple->post('/deletar/aluno', 'Cadastro@deletar_arquivo');
+     $simple->post('/cadastro/solicitacao', 'Cadastro@salvar_solicitacao');
+     $simple->post('/notificacoes', 'Notificacao@leitura');
      
-     $simple->get('/deletar/[i:id]/[:token]', 'ListaController@deletar');
+     $simple->get('/deletar/[i:id]/[:token]', 'Lista@deletar');
      
     /**
      * -------------------------------------------------------------------------
@@ -46,6 +46,6 @@
      */
      
      
-     $simple->get('*', 'ErroController@view');
+     $simple->get('*', 'Erro@view');
 
 

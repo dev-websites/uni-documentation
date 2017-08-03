@@ -19,7 +19,7 @@ class HomeController extends AuthController {
     public function view() {
         AuthController::auth();
         
-        echo $this->service->render('site/home.twig', [
+        echo $this->app->render('site/home.twig', [
             'simple' => [
                 'title'             => 'Estácio :: Home',
                 'data'              => date('Y'),

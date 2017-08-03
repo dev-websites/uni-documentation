@@ -16,7 +16,7 @@ class CadastroController extends AuthController {
 
     
     public function view_admin() {
-        echo $this->service->render('adm/cadastro.twig', [
+        echo $this->app->render('adm/cadastro.twig', [
             'simple' => [
                 'title'  => 'Estácio :: Administrador',
                 'data'   => date('Y'),
@@ -32,7 +32,7 @@ class CadastroController extends AuthController {
     public function view_aluno() {
         AuthController::auth();
         
-        echo $this->service->render('site/cadastro_aluno.twig', [
+        echo $this->app->render('site/cadastro_aluno.twig', [
             'simple' => [
                 'title'             => 'Estácio :: Cadastro de Alunos',
                 'data'              => date('Y'),
@@ -57,7 +57,7 @@ class CadastroController extends AuthController {
     public function view_arquivo() {
         AuthController::auth();
         
-        echo $this->service->render('site/cadastro_arquivo.twig', [
+        echo $this->app->render('site/cadastro_arquivo.twig', [
             'simple' => [
                 'title'             => 'Estácio :: Upload de Arquivo(Cadastrar)',
                 'data'              => date('Y'),
@@ -82,7 +82,7 @@ class CadastroController extends AuthController {
     public function view_deletar() {
         AuthController::auth();
         
-        echo $this->service->render('site/deletar_aluno.twig', [
+        echo $this->app->render('site/deletar_aluno.twig', [
             'simple' => [
                 'title'             => 'Estácio :: Upload de Arquivo(Deletar)',
                 'data'              => date('Y'),
@@ -123,7 +123,7 @@ class CadastroController extends AuthController {
     public function view_solicitacao() {
         AuthController::auth();
         
-        echo $this->service->render('site/cadastro_solicitacao.twig', [
+        echo $this->app->render('site/cadastro_solicitacao.twig', [
             'simple' => [
                 'title'             => 'Estácio :: Cadastro de Solicitações',
                 'data'              => date('Y'),

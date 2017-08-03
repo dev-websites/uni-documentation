@@ -85,7 +85,7 @@ class ListaController extends AuthController {
     
     
     private function listagem_padrao() {
-        echo $this->service->render('site/lista.twig', [
+        echo $this->app->render('site/lista.twig', [
             'simple' => [
                 'title'             => 'Estácio :: Lista de Alunos',
                 'data'              => date('Y'),
@@ -111,7 +111,7 @@ class ListaController extends AuthController {
     private function listagem_com_condicional(array $conditions) {
         session_start(['read_and_close' => TRUE]);
         
-        echo $this->service->render('site/lista.twig', [
+        echo $this->app->render('site/lista.twig', [
             'simple' => [
                 'title'             => 'Estácio :: Lista de Alunos',
                 'data'              => date('Y'),

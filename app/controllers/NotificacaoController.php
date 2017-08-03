@@ -14,7 +14,7 @@ class NotificacaoController extends AuthController {
     public function view() {
         AuthController::auth();
         
-        echo $this->service->render('site/notificacoes.twig', [
+        echo $this->app->render('site/notificacoes.twig', [
             'simple' => [
                 'title'             => 'Estácio :: Notificações',
                 'data'              => date('Y'),
