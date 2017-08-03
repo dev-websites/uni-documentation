@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <title> {{ simple['title'] }}  </title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width = device-width, initial-scale =1.0, maximum-scale = 1.0, user-scalable = no" />
+        
+        <!-- Favicon -->
+        <link rel="shorcut icon" href="{{ simple['asset'] }}/img/logo.png" />
+        
+        <!-- Components -->
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/bower_components/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/bower_components/font-awesome/css/font-awesome.min.css" />
+        
+        <!-- Css -->
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/css/site/menu.css" />
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/css/site/rodape.css" />
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/css/site/formulario.css" />
+        
+        <!-- Components -->
+        <script type="text/javascript" src="{{ simple['asset'] }}/bower_components/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ simple['asset'] }}/bower_components/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript"> 
+            $(document).ready(function(){
+               $('a.notify').tooltip();
+            });
+        </script>
+    </head>
+    <body>
+        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="menu col-lg-2 col-md-2 col-sm-3 col-xs-4">
+                    <img src="{{ simple['asset'] }}/img/estacio-logo-white.png" alt="Estácio" title="Estácio" />
+                  
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="user" role="presentation">
+                            <i class="fa fa-user-circle"></i> {{ user.nome }} 
+                            <a href="{{ simple['notificacoes'] }}" class="notify" title="Notificações" data-placement="right"> 
+                                {% if count != 0 %}
+                                    <i class="fa fa-bell"></i>
+                                    <div class="contador">{{ count }}</div>
+                                {% else %}
+                                    <i class="fa fa-bell-o"></i>
+                                {% endif %}
+                            </a>
+                        </li>
+                        <hr />
+                        <li role="presentation"><a href="{{ simple['home'] }}"><i class="fa fa-home"></i> Página Inicial </a></li>
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-plus-square"></i> Alunos <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li role="presentation"> <a href="{{ simple['novo-aluno'] }}"> <i class="fa fa-user-plus"></i> Cadastro padrão </a> </li>
+                                <li role="presentation"> <a href="{{ simple['upload'] }}"> <i class="fa fa-plus"></i> Cadastrar Alunos </a> </li>
+                                <li role="presentation"> <a href="{{ simple['deletar-aluno'] }}"> <i class="fa fa-minus"></i> Deletar Alunos </a> </li>
+                            </ul>
+                        </li>
+                        <li role="presentation"><a href="{{ simple['nova-solicitacao'] }}"><i class="fa fa-plus-square"></i> Nova Solicitação </a></li>
+                        <li role="presentation"><a href="{{ simple['lista-solicitacao'] }}"><i class="fa fa-file-text"></i> Lista de Solicitações </a></li>
+                        <li role="presentation"><a href="{{ simple['lista-aluno'] }}"><i class="fa fa-users"></i> Lista de Alunos </a></li>
+                        <hr />
+                        <li role="presentation"><a href="{{ simple['deslogar'] }}"><i class="fa fa-sign-out"></i> Sair </a></li>
+                    </ul>   
+                </div>
+                <div class="formulario-cad col-lg-10 col-md-10 col-sm-9 col-xs-8">
+                    <h1 class="text-center"> Cadastro de Alunos </h1>
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-body">
+                            <form method="post">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="sizing-addon2"> <i class="fa fa-id-card-o"></i> </span>
+                                        <input type="number" class="form-control" placeholder="Matrícula ou CPF" name="atual" aria-describedby="sizing-addon2" required />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="sizing-addon2"> <i class="fa fa-user-o"></i> </span>
+                                        <input type="text" class="form-control" placeholder="Nome completo" name="nome" aria-describedby="sizing-addon2" pattern="[A-Za-zá-úÁ-Ú\s]+$" required />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="sizing-addon2"> <i class="fa fa-dropbox"></i> </span>
+                                        <input type="number" class="form-control" placeholder="Caixa" name="caixa" aria-describedby="sizing-addon2" required />
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                                    <div class="btn-group" role="group">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fa fa-check"></i> Cadastrar 
+                                        </button>
+                                    </div>
+                                    <div class="btn-group" role="group">
+                                        <button type="reset" class="btn btn-danger">
+                                            <i class="fa fa-trash-o"></i> Limpar 
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="panel-footer">
+                            <p class="text-center text-muted"> 
+                                Portal Estácio: <a href="http://portal.estacio.br/" target="_blank">http://portal.estacio.br/</a>
+                            </p>
+                        </div>
+                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="rodape col-lg-12">
+                    <p class="text-center text-muted"> 
+                        Copyright <i class="fa fa-copyright"></i> {{ simple['data'] }}, Estácio fic - Todos os direitos reservados. <br />
+                    </p>
+                </div>
+            </div>
+        </div>
+                    
+        <!-- Bootstrap Js -->            
+        <script type="text/javascript"> 
+            $(document).ready(function(){
+               $('a.notify').tooltip();
+            });
+        </script>
+    </body>
+</html>
+
+
+
+
+

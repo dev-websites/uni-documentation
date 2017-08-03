@@ -1,0 +1,84 @@
+ /* FORMULARIO */
+ 
+ html, body {
+    background: url('../../img/Screenshot_1.png');
+ } 
+ 
+.formulario-cad, 
+.formulario-sol {
+    padding: 20px;
+}
+
+.formulario-cad {
+    margin-top: 70px;
+}
+
+.formulario-sol {
+    margin-top: -15px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #0F92AB;
+}
+
+/* PAINEL */
+
+.panel {
+    margin: 0 auto;
+    width: 420px;
+}
+
+.panel-body {
+    padding: 30px;
+}
+
+/* INPUTS */
+
+.input-group-addon {
+    background: none;
+    border: none;
+    border-radius: 0;
+}
+
+.form-control {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.form-group {
+    border-bottom: 1px solid #CCC;
+    margin-bottom: 20px;
+
+    -webkit-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
+}
+
+.form-group:hover{
+    border-bottom: 1px solid #19AAB8;
+}
+
+.btn {
+    border: none;
+    
+    -webkit-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
+}
+
+.btn-primary {
+    background-color: #19AAB8;
+}
+
+.btn-primary:hover {
+    background-color: #0F92AB;
+}
+

@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+   background: linear-gradient(to bottom right, #006B96, #19AAB8);
+   background: -webkit-linear-gradient(to bottom right, #006B96, #19AAB8);
+   background:    -moz-linear-gradient(to bottom right, #006B96, #19AAB8);
+   background:      -o-linear-gradient(to bottom right, #006B96, #19AAB8);
+   overflow: hidden;
+}
+
+.container-fluid {
+    height: 658px;
+}
+
+.row {
+    padding: 30px;
+}
+
+.col-lg-4 {
+    margin: 0 auto;
+    margin-top: 30px;
+    float: none;
+}
+
+/* LOGO */
+
+.estacio-logo {
+    width: 280px;
+    margin-bottom: 20px;
+}
+
+/* PAINEL */
+
+.panel-body {
+    padding: 30px;
+}
+
+/* INPUTS */
+
+.input-group-addon {
+    background: none;
+    border: none;
+    border-radius: 0;
+}
+
+.form-control {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.form-group {
+    border-bottom: 1px solid #CCC;
+    margin-bottom: 30px;
+    
+    -webkit-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
+}
+
+.form-group:hover{
+    border-bottom: 1px solid #19AAB8;
+}
+
+.btn {
+    width: 100%;
+    background-color: #19AAB8;
+    border: none;
+    
+    -webkit-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
+}
+
+.btn:hover {
+    background-color: #006B96;
+}
+
+/* LINK */
+
+a:hover {
+    text-decoration: none;
+}
+

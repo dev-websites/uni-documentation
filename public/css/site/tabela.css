@@ -1,0 +1,44 @@
+/* TABELA (DataTable - Editada)*/
+
+html, body {
+    background: url('../../img/Screenshot_1.png');
+} 
+
+h1 {
+    color: #0F92AB;
+}
+
+.table {
+    background-color: #FFF;
+}
+
+.table-scroll {
+    height: 600px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.table-scroll::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F7F7F5;
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: #0F92AB;
+}
+
+.table > thead > tr {
+   background-image: linear-gradient(to top right, #006B96, #19AAB8);
+    color: #FFF;
+}
+
+.dataTables_paginate > .pagination > li > a {
+   color: #0F92AB;
+}
+
+.dataTables_paginate > .pagination > li.active > a {
+  background-image: linear-gradient(to top right, #006B96, #19AAB8);
+   border: 1px solid #0F92AB;
+   color: #FFF;
+}

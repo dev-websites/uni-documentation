@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <title> {{ simple['title'] }}  </title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width = device-width, initial-scale =1.0, maximum-scale = 1.0, user-scalable = no" />
+        
+        <!-- Favicon -->
+        <link rel="shorcut icon" href="{{ simple['asset'] }}/img/logo.png" />
+        
+        <!-- Components -->
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/bower_components/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/bower_components/font-awesome/css/font-awesome.min.css" />
+        
+        <!-- Css -->
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/css/site/menu.css" />
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/css/site/rodape.css" />
+        <style type="text/css">
+            /* PESQUISA */
+            
+            html, body {
+                background: url('public/img/Screenshot_1.png');
+            }
+            
+            .pesquisa {
+                padding: 20px;
+                height: 604px;
+            }
+
+            form {
+                margin: 0 auto;
+                margin-top: 155px;
+                width: 80%;
+            }
+            
+            h1 {
+                margin-bottom: 20px;
+                color: #0F92AB;
+            }
+
+            .radio > label {
+                margin-left: 15px;
+            }
+            
+            .form-control {
+                height: 80px;
+                font-size: 15pt;
+            }
+
+            .form-control::-webkit-input-placeholder {
+                font-size: 15pt;
+            }
+            
+            .btn, .btn-default:hover, .btn-default:focus {
+                background: none;
+                border: none ;
+                box-shadow: none;
+                outline: none;
+            }
+        </style>
+        
+        <!-- Components -->
+        <script type="text/javascript" src="{{ simple['asset'] }}/bower_components/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ simple['asset'] }}/bower_components/bootstrap/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="menu col-lg-2 col-md-2 col-sm-3 col-xs-4">
+                    <img src="{{ simple['asset'] }}/img/estacio-logo-white.png" title="Estácio" />
+                  
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="user" role="presentation">
+                            <i class="fa fa-user-circle"></i> {{ user.nome }} 
+                            <a href="{{ simple['notificacoes'] }}" class="notify" title="Notificações" data-placement="right"> 
+                                {% if count != 0 %}
+                                    <i class="fa fa-bell"></i>
+                                    <div class="contador">{{ count }}</div>
+                                {% else %}
+                                    <i class="fa fa-bell-o"></i>
+                                {% endif %}
+                            </a>
+                        </li>
+                        <hr />
+                        <li role="presentation"><a href="{{ simple['home'] }}"><i class="fa fa-home"></i> Página Inicial </a></li>
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-plus-square"></i> Alunos <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li role="presentation"> <a href="{{ simple['novo-aluno'] }}"> <i class="fa fa-user-plus"></i> Cadastro padrão </a> </li>
+                                <li role="presentation"> <a href="{{ simple['upload'] }}"> <i class="fa fa-plus"></i> Cadastrar Alunos </a> </li>
+                                <li role="presentation"> <a href="{{ simple['deletar-aluno'] }}"> <i class="fa fa-minus"></i> Deletar Alunos </a> </li>
+                            </ul>
+                        </li>
+                        <li role="presentation"><a href="{{ simple['nova-solicitacao'] }}"><i class="fa fa-plus-square"></i> Nova Solicitação </a></li>
+                        <li role="presentation"><a href="{{ simple['lista-solicitacao'] }}"><i class="fa fa-file-text"></i> Lista de Solicitações </a></li>
+                        <li role="presentation"><a href="{{ simple['lista-aluno'] }}"><i class="fa fa-users"></i> Lista de Alunos </a></li>
+                        <hr />
+                        <li role="presentation"><a href="{{ simple['deslogar'] }}"><i class="fa fa-sign-out"></i> Sair </a></li>
+                    </ul>   
+                </div>
+                <div class="pesquisa col-lg-10 col-md-10 col-sm-9 col-xs-8">
+                    <form method="post">
+                        <h1 class="text-center"> Pesquise por algum(ns) dado(s) </h1>
+                        <div class="radio">
+                            <span> Adicionar filtragem por: </span> 
+                            <label>
+                              <input type="radio" name="filtro" value="matricula" />
+                              matrícula
+                            </label>
+                            <label>
+                              <input type="radio" name="filtro" value="caixa" />
+                              caixa, 
+                            </label>
+                            <button type="reset" class="btn btn-default"> <kbd> não quero filtragem. </kbd> </button>
+                        </div>
+                        <div class="form-group">
+                          <input type="search" class="form-control" id="exampleInputName2" name="pesquisa" placeholder="Pesquise por um aluno e/ou (matrícula ou caixa)." required />
+                        </div>
+                        <span class="pull-left"> Português (Brasil) </span>
+                        <span class="pull-right"> Portal Estácio - <a href="http://portal.estacio.br/" target="_blank">http://portal.estacio.br/</a> </span>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="rodape col-lg-12">
+                    <p class="text-center text-muted"> 
+                        Copyright <i class="fa fa-copyright"></i> {{ simple['data'] }}, Estácio fic - Todos os direitos reservados. <br />
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bootstrap Js -->            
+        <script type="text/javascript"> 
+            $(document).ready(function(){
+               $('a.notify').tooltip();
+            });
+        </script>
+    </body>
+</html>
+
+
+
+

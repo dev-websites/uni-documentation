@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F7F7F5;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: #0F92AB;
+}
+
+/* NOTIFICAÇÕES */
+
+.notification {
+    background-image: url('../../img/Screenshot_1.png');
+    padding: 30px;
+    height: 604px;
+    max-height: 604px;
+    overflow-y: auto;
+}
+
+.notification > h1 {
+    color: #006B96;
+    margin-top: 250px;
+}
+
+/* MENSAGEM */
+
+.thumbnail {
+    height: 180px;
+}
+
+.thumbnail > .caption > p {
+    height: 80px;
+    max-height: 80px;
+    overflow-y: auto;
+}
+
+/* BOTÕES */
+
+.btn {
+    border: none;
+    
+    -webkit-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
+}
+
+.btn-primary {
+    background-color: #19AAB8;
+}
+
+.btn-primary:hover {
+    background-color: #0F92AB;
+}

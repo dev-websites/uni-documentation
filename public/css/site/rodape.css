@@ -1,0 +1,16 @@
+/* RODAPE */
+
+.rodape {
+    padding: 10px;
+    background-color: #FBFBFC;
+    border-top: 2px solid #EEE;
+}
+
+.rodape > p {
+    font-size: 12pt;
+}
+
+.rodape > p > span {
+    color: #19AAB8;
+    font-weight: bold;
+}

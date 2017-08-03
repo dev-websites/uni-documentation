@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <title> {{ simple['title'] }}  </title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width = device-width, initial-scale =1.0, maximum-scale = 1.0, user-scalable = no" />
+        
+        <!-- Favicon -->
+        <link rel="shorcut icon" href="{{ simple['asset'] }}/img/logo.png" />
+        
+        <!-- Components -->
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/bower_components/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/bower_components/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/bower_components/dataTables/css/dataTables.bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/bower_components/dataTables/css/buttons.bootstrap.min.css" />
+
+        <!-- Css Internal -->
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/css/site/menu.css" />
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/css/site/rodape.css" />
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/css/site/tabela.css" />
+   
+        <!-- Components -->
+        <script type="text/javascript" src="{{ simple['asset'] }}/bower_components/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ simple['asset'] }}/bower_components/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="{{ simple['asset'] }}/bower_components/dataTables/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="{{ simple['asset'] }}/bower_components/dataTables/js/dataTables.bootstrap.min.js"></script>
+        <script type="text/javascript" src="{{ simple['asset'] }}/bower_components/dataTables/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="{{ simple['asset'] }}/bower_components/dataTables/js/buttons.bootstrap.min.js"></script>
+        <script type="text/javascript" src="{{ simple['asset'] }}/bower_components/dataTables/js/jszip.min.js"></script>
+        <script type="text/javascript" src="{{ simple['asset'] }}/bower_components/dataTables/js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="{{ simple['asset'] }}/bower_components/dataTables/js/buttons.print.min.js"></script>
+         
+        <!-- Js External -->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var table = $('#my_table').DataTable({
+                    lengthChange: false,
+                    buttons: ['copy', 'excel', 'print'],
+                    "oLanguage":{
+                        "sEmptyTable": "Nenhum registro encontrado",
+                        "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+                        "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                        "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                        "sInfoPostFix": "",
+                        "sInfoThousands": ".",
+                        "sLengthMenu": "_MENU_ resultados por página",
+                        "sLoadingRecords": "Carregando...",
+                        "sProcessing": "Processando...",
+                        "sZeroRecords": "Nenhum registro encontrado",
+                        "sSearch": "Pesquisar: ",
+                        "oPaginate": {
+                            "sNext": "Próximo",
+                            "sPrevious": "Anterior",
+                            "sFirst": "Primeiro",
+                            "sLast": "Último"
+                        },
+                        "oAria": {
+                            "sSortAscending": ": Ordenar colunas de forma ascendente",
+                            "sSortDescending": ": Ordenar colunas de forma descendente"
+                        }
+                    }
+                });
+                
+                table.buttons().container().appendTo('#my_table_wrapper .col-sm-6:eq(0)');
+            });
+        </script>
+    </head>
+    <body>
+        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="menu col-lg-2 col-md-2 col-sm-3 col-xs-4">
+                    <img src="{{ simple['asset'] }}/img/estacio-logo-white.png" alt="Estácio" title="Estácio" />
+                  
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="user" role="presentation">
+                            <i class="fa fa-user-circle"></i> {{ user.nome }} 
+                            <a href="{{ simple['notificacoes'] }}" class="notify" title="Notificações" data-placement="right"> 
+                                {% if count != 0 %}
+                                    <i class="fa fa-bell"></i>
+                                    <div class="contador">{{ count }}</div>
+                                {% else %}
+                                    <i class="fa fa-bell-o"></i>
+                                {% endif %}
+                            </a>
+                        </li>
+                        <hr />
+                        <li role="presentation"><a href="{{ simple['home'] }}"><i class="fa fa-home"></i> Página Inicial </a></li>
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-plus-square"></i> Alunos <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li role="presentation"> <a href="{{ simple['novo-aluno'] }}"> <i class="fa fa-user-plus"></i> Cadastro padrão </a> </li>
+                                <li role="presentation"> <a href="{{ simple['upload'] }}"> <i class="fa fa-plus"></i> Cadastrar Alunos </a> </li>
+                                <li role="presentation"> <a href="{{ simple['deletar-aluno'] }}"> <i class="fa fa-minus"></i> Deletar Alunos </a> </li>
+                            </ul>
+                        </li>
+                        <li role="presentation"><a href="{{ simple['nova-solicitacao'] }}"><i class="fa fa-plus-square"></i> Nova Solicitação </a></li>
+                        <li role="presentation"><a href="{{ simple['lista-solicitacao'] }}"><i class="fa fa-file-text"></i> Lista de Solicitações </a></li>
+                        <li role="presentation"><a href="{{ simple['lista-aluno'] }}"><i class="fa fa-users"></i> Lista de Alunos </a></li>
+                        <hr />
+                        <li role="presentation"><a href="{{ simple['deslogar'] }}"><i class="fa fa-sign-out"></i> Sair </a></li>
+                    </ul>   
+                </div>
+                <div class="table-scroll col-lg-10 col-md-10 col-sm-9 col-xs-8">
+                    <h1 class="text-center"> Solicitações de Documentos </h1>
+                    <table id="my_table" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="text-center"> Matrícula </th>
+                                <th class="text-center"> Nome completo </th>
+                                <th class="text-center" style="width: 12%"> Caixa(s) </th>
+                                <th class="text-center"> Data Solicitada </th>
+                                <th class="text-center"> Data Devolução </th>
+                                <th class="text-center"> Solicitante </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for documento in documentos %}
+                            <tr>
+                                <td class="text-center"> {{ documento.matricula == 0 ? "-" : documento.matricula }} </td>
+                                <td class="text-center"> {{ documento.nome is empty ? "-" : documento.nome|upper }} </td>
+                                <td class="text-center"> {{ documento.caixas is empty ? "-" : documento.caixas }} </td>
+                                <td class="text-center"> {{ documento.data_solicitacao is empty ? "-" : documento.data_solicitacao|date('d/m/Y') }} </td>
+                                <td class="text-center"> {{ documento.data_devolucao is empty ? "-" : documento.data_devolucao|date('d/m/Y') }} </td>
+                                <td class="text-center"> {{ documento.solicitante is empty ? "-" : documento.solicitante|upper }} </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="rodape col-lg-12">
+                    <p class="text-center text-muted"> 
+                        Copyright <i class="fa fa-copyright"></i> {{ simple['data'] }}, Estácio fic - Todos os direitos reservados. <br />
+                    </p>
+                </div>
+            </div>
+        </div>
+                    
+        <!-- Bootstrap Js -->            
+        <script type="text/javascript"> 
+            $(document).ready(function(){
+               $('a.notify').tooltip();
+            });
+        </script>
+    </body>
+</html>
+
+
+
+
+
+

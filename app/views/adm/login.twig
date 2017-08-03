@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <title> {{ simple['title'] }} </title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width = device-width, initial-scale =1.0, maximum-scale = 1.0, user-scalable = no" />
+        
+        <!-- Favicon -->
+        <link rel="shorcut icon" href="{{ simple['asset'] }}/img/logo.png" />
+        
+        <!-- Components -->
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/bower_components/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/bower_components/font-awesome/css/font-awesome.min.css" />
+        
+        <!-- Css -->
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/css/adm/admin.css" />
+    </head>
+    <body>
+        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-md-5 col-sm-6">
+                    <h1 class="text-center"> 
+                        <img class="estacio-logo" src="{{ simple['asset'] }}/img/logo-bottom-compromisso.png" title="Estácio"/> 
+                    </h1>
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-body">
+                            <form method="post">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="sizing-addon2"> <i class="fa fa-envelope-o"></i> </span>
+                                        <input type="email" class="form-control" placeholder="email" name="email" aria-describedby="sizing-addon2" required />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="sizing-addon2"> <i class="fa fa-key"></i> </span>
+                                        <input type="password" class="form-control" minlength="6" placeholder="senha" name="senha" aria-describedby="sizing-addon2" required />
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary"> <i class="fa fa-sign-in"></i> Entrar</button>
+                                
+                                <hr />
+                                
+                                <p class="text-right"> Não possui uma conta? <a href="{{ simple['cadastro'] }}"> Crie uma agora. </a> </p>
+                            </form>
+                        </div>
+                        <div class="panel-footer">
+                            <p class="text-center text-muted"> 
+                                Copyright <i class="fa fa-copyright"></i> {{ simple['data'] }}, Estácio fic.
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
+
+
+

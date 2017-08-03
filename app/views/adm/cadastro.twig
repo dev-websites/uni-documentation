@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <title> {{ simple['title'] }} </title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width = device-width, initial-scale =1.0, maximum-scale = 1.0, user-scalable = no" />
+        
+        <!-- Favicon -->
+        <link rel="shorcut icon" href="{{ simple['asset'] }}/img/logo.png" />
+        
+        <!-- Components -->
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/bower_components/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/bower_components/font-awesome/css/font-awesome.min.css" />
+        
+        <!-- Css -->
+        <link rel="stylesheet" type="text/css" href="{{ simple['asset'] }}/css/adm/admin.css" />
+        
+        <script type="text/javascript">
+            function password() {
+                var pass;
+                secret = {{ simple['secret']|json_encode|raw }}; 
+                
+                do {
+                    pass = prompt('Digite a senha para confirmar o cadastro.');
+                    if(pass === secret){
+                        // Confirmado
+                    } else {
+                        alert('Senha incorreta');
+                        event.preventDefault();
+                    }
+                } while(pass === NULL || pass === '');
+            };
+        </script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-md-5 col-sm-6">
+                    <h1 class="text-center"> 
+                        <img class="estacio-logo" src="{{ simple['asset'] }}/img/logo-bottom-compromisso.png" title="Estácio"/> 
+                    </h1>
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-body">
+                            <form method="post" onsubmit="password();">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="sizing-addon2"> <i class="fa fa-user-o"></i> </span>
+                                        <input type="text" class="form-control" placeholder="nome do usuário" maxlength="15" name="nome" aria-describedby="sizing-addon2" pattern="[A-Za-zá-úÁ-Ú\s]+$" title="Esté campo só aceita somente letras" required />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="sizing-addon2"> <i class="fa fa-envelope-o"></i> </span>
+                                        <input type="email" class="form-control" placeholder="email" id="email" name="email" aria-describedby="sizing-addon2" required />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="sizing-addon2"> <i class="fa fa-key"></i> </span>
+                                        <input type="password" class="form-control" minlength="6" placeholder="senha" id="senha" name="senha" aria-describedby="sizing-addon2" required />
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary"> <i class="fa fa-user-plus"></i> Cadastrar</button>
+
+                                <hr />
+                                
+                                <p class="text-right"> Já possui uma conta? <a href="{{ simple['login'] }}"> &lsaquo;&lsaquo; Voltar </a> </p>
+                            </form>
+                        </div>
+                        <div class="panel-footer">
+                            <p class="text-center text-muted"> 
+                                Copyright <i class="fa fa-copyright"></i> {{ simple['data'] }}, Estácio fic.
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
+
+
+
+

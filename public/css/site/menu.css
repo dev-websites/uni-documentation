@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F7F7F5;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: #0F92AB;
+}
+
+/* MENU */
+
+.menu {
+    background: linear-gradient(to bottom right, #006B96, #19AAB8);
+    background: -webkit-linear-gradient(to bottom right, #006B96, #19AAB8);
+    background:    -moz-linear-gradient(to bottom right, #006B96, #19AAB8);
+    background:      -o-linear-gradient(to bottom right, #006B96, #19AAB8);
+    padding: 10px;
+    height: 604px;
+}
+
+.menu > img {
+    width: 180px;
+}
+
+.nav {
+    margin-top: 50px;
+}
+
+.nav > li {
+    margin-bottom: 10px;
+}
+
+.nav > li > a {
+    color: #FFF;
+    
+    -webkit-transition: all ease-in-out 0.2s;
+    -moz-transition: all ease-in-out 0.2s;
+    -o-transition: all ease-in-out 0.2s;
+    transition: all ease-in-out 0.2s;
+}
+
+.nav > li:hover > a, .nav > li:focus > a {
+    background-color: #FFF;
+    color: #19AAB8;
+    font-size: 11pt;
+}
+
+.nav > li.user {
+    color: #FFF;
+    font-size: 11pt;
+    margin-left: 15px;
+}
+
+/* NOTIFICAÇÕES */
+
+.nav > li > a.notify {
+    float: right;
+    color: #FFF;
+    margin-top: -12px;
+}
+
+.nav > li:hover > a.notify {
+    background: none;
+}
+
+.nav > li > a.notify > .contador {
+    position: absolute;
+    top: 6px;
+    right: 7px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50px;
+    background-color: #FF0000;
+    color: #FFF;
+    font-size: 7.2pt;
+    text-align: center;
+}
